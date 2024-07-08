@@ -43,7 +43,19 @@
  *   in custom container, badges, etc.
  * -------------------------------------------------------------------------- */
 
+/* Chinese quotes rendering fix. 中英文弯引号共享 Unicode 码位，确保引号使用中文字体渲染 */
+@font-face {
+  font-family: 'Chinese Quotes';
+  src: local('PingFang SC Regular'), local('PingFang SC'), local('SimHei'),
+    local('Source Han Sans SC');
+  unicode-range: U+2018, U+2019, U+201C, U+201D; /* 分别是 ‘’“” */
+}
+
 :root {
+  --vp-font-family-base: 'Chinese Quotes', 'Inter', ui-sans-serif, system-ui,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
